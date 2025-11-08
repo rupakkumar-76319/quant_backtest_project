@@ -1,0 +1,8 @@
+PERFORMANCE SUMMARY
+----------------------------------------
+Initial Investment : $1,000.00
+Final Market Value : $1,767.14
+Final Strategy Value : $1,349.68
+Total Profit : $349.68 (34.97%)
+Sharpe Ratio : 1.18
+Max Drawdown : -0.31%

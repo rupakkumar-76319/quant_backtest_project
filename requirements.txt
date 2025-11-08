@@ -1,0 +1,24 @@
+# This file lists all libraries needed to run your code.
+
+**requirements.txt**
+pandas
+numpy
+matplotlib
+
+# Our final project should look like this:
+
+quant_backtest_project/
+├── Data/
+│ └── AAPL.csv
+├── output/
+│ ├── strategy_performance.png
+│ └── summary.txt
+├── src/
+│ ├── utils.py
+│ ├── strategy.py
+│ ├── backtest.py
+│ ├── visualization.py
+│ └── main.py
+├── LICENSE
+├── README.md
+└── requirements.txt
