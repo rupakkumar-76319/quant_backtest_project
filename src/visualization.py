@@ -45,6 +45,8 @@ def plot_result(data, sharpe_ratio, max_drawdown, percent_return):
                bbox=dict(facecolor='white', edgecolor='black'))
 
     plt.tight_layout()
+    os.makedirs("Output/figures", exist_ok=True)
+
     plt.savefig("Output/figures/strategy_performance.png", dpi=300, bbox_inches='tight')
     plt.show()
     return data, sharpe_ratio, max_drawdown, percent_return

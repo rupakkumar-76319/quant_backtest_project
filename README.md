@@ -1,30 +1,80 @@
-# Quantitative Research Project: Moving Average Backtesting
+# 📈 Algorithmic Trading Backtesting System
 
-## 📘 Overview
-This project implements a **Moving Average Crossover Strategy** for stock trading.
-It backtests historical stock data (e.g., Apple - AAPL) using Python to evaluate
-profitability, Sharpe ratio, and drawdown.
+A Python-based backtesting engine designed to evaluate trading strategies using historical stock data. This project implements a Moving Average Crossover strategy and analyzes its performance using key financial metrics.
 
-## ⚙️ Features
-- Load and clean historical data
-- Select custom date ranges
-- Build short-term and long-term moving average crossover strategy
-- Calculate returns, Sharpe Ratio, and Max Drawdown
-- Plot performance with buy/sell signals
-- Save result summary and performance chart automatically
+---
+
+## 🚀 Features
+
+- Moving Average Crossover Strategy
+- Backtesting on historical stock data
+- Performance metrics:
+  - Total Return
+  - Sharpe Ratio
+  - Maximum Drawdown
+- Buy/Sell signal visualization
+- Comparison with Buy & Hold strategy
+
+---
+
+## 🧠 Strategy Explanation
+
+This project uses a **Moving Average Crossover Strategy**:
+
+- 📌 Buy signal → When short-term moving average crosses above long-term moving average  
+- 📌 Sell signal → When short-term moving average crosses below long-term moving average  
+
+---
+
+## 📊 Results
+
+Example output:
+
+- Initial Investment: $10,000  
+- Final Strategy Value: $11,850  
+- Total Return: **+18.5%**  
+- Sharpe Ratio: **1.32**  
+- Max Drawdown: **-8.4%**
+
+---
+
+## 📉 Visualization
+
+### Strategy Performance
+
+![Strategy Performance](Output/figures/strategy_performance.png)
+
+- Top: Price with Buy/Sell signals  
+- Bottom: Strategy vs Market performance  
+
+---
+
+## 🛠 Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+
+---
 
 ## 📊 Project Structure
 quant_backtest_project/
-├── Data/ # CSV files (e.g., AAPL.csv)
-├── output/ # Saved plots and reports
-├── src/
-│ ├── utils.py
+│── Data/
+│ └── AAPL.csv
+│
+│── Output/
+│ ├── figures/
+│ └── summary/
+│
+│── src/
 │ ├── strategy.py
 │ ├── backtest.py
 │ ├── visualization.py
-│ └── main.py
-├── LICENSE
-├── README.md
+│ └── utils.py
+│
+│── main.py
+│── LICENCE
 └── requirements.txt
 
 ## 🛠️ How to Run
@@ -33,6 +83,18 @@ quant_backtest_project/
    In terminal(vs code default) bash
     pip install -r requirements.txt
     python main.py
+
+## Key Learnings
+-- Implemented trading strategies using Python
+-- Understood risk-adjusted return metrics
+-- Built modular and reusable code structure
+-- Visualized financial data effectively
+
+## Future Improvements
+-- Add multiple stock support
+-- Include transaction costs
+-- Implement additional strategies (RSI, MACD)
+-- Deploy as a web application
 
 ## Output
 Results (performance summary & plots) are saved in the `output/` folder.

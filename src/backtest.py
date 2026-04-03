@@ -18,7 +18,7 @@ def run_backtesting(data, moneyYouHave):
     '''
 
     'Step-1'
-    data['daily_return']= data['Close'].pct_change()
+    data['daily_return']= data['Adj Close'].pct_change()
 
     'step-2'
     data['Strategy_return']= data['daily_return'] * data['Signal'].shift(1)
@@ -35,13 +35,11 @@ def run_backtesting(data, moneyYouHave):
 
     strategy_returns = data['Strategy_return'].dropna()
     sharpe_ratio = (strategy_returns.mean() / strategy_returns.std()) * np.sqrt(252)
-
-    strategy_returns = data['Strategy_return'].dropna()
-    sharpe_ratio = (strategy_returns.mean() / strategy_returns.std()) * np.sqrt(252)
     cumulative = (1 + strategy_returns).cumprod()
     rolling_max = cumulative.cummax()
     drawdown = (cumulative - rolling_max) / rolling_max
     max_drawdown = drawdown.min()
+    transaction_cost= 0.001 # It's 0.1%
 
     summary_text = (
     "PERFORMANCE SUMMARY\n"
@@ -51,7 +49,7 @@ def run_backtesting(data, moneyYouHave):
     + f"Final Strategy Value : ${final_strategy:,.2f}\n"
     + f"Total Profit : ${profit:,.2f} ({percent_return:.2f}%)\n"
     + f"Sharpe Ratio : {sharpe_ratio:.2f}\n"
-    + f"Max Drawdown : {max_drawdown:.2f}%\n"
+    + f"Max Drawdown : {max_drawdown* 100:.2f}%\n"
     )
 
     print(summary_text)
